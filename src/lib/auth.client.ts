@@ -12,6 +12,7 @@ import {
   lastLoginMethodClient,
   multiSessionClient,
 } from 'better-auth/client/plugins'
+import { ssoClient } from '@better-auth/sso/client'
 
 export const authClient = createAuthClient({
   plugins: [
@@ -40,5 +41,6 @@ export const authClient = createAuthClient({
     deviceAuthorizationClient(),
     lastLoginMethodClient(),
     multiSessionClient(),
+    ssoClient(),
   ],
 })

@@ -18,6 +18,7 @@ import {
 } from 'better-auth/plugins'
 import { passkey } from 'better-auth/plugins/passkey'
 import { emailHarmony } from 'better-auth-harmony'
+import { sso } from '@better-auth/sso'
 
 export const auth = betterAuth({
   rateLimit: {
@@ -74,6 +75,7 @@ export const auth = betterAuth({
     lastLoginMethod(),
     multiSession(),
     emailHarmony(),
+    sso(),
   ],
   socialProviders: {
     github: {
