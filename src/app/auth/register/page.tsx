@@ -24,7 +24,7 @@ import {
 import { Input } from '@/components/ui/input'
 import { PasswordInput } from '@/components/ui/password-input'
 import { Spinner } from '@/components/ui/spinner'
-import { authClient } from '@/lib/auth.client'
+import { signUp } from '@/lib/auth.client'
 import { toast } from 'sonner'
 
 const signUpSchema = z.object({
@@ -50,7 +50,7 @@ export default function RegisterPreview() {
   const { isSubmitting } = form.formState
 
   const handleSubmit = async (data: SignUpForm) => {
-    const res = await authClient.signUp.email(
+    const res = await signUp.email(
       { ...data, callbackURL: '/' },
       {
         onError: (error) => {

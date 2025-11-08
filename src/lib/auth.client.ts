@@ -14,14 +14,14 @@ import {
 } from 'better-auth/client/plugins'
 import { ssoClient } from '@better-auth/sso/client'
 
-export const authClient = createAuthClient({
+export const { signIn, useSession, signUp } = createAuthClient({
   plugins: [
     anonymousClient(),
     magicLinkClient(),
     emailOTPClient(),
     passkeyClient(),
     oneTapClient({
-      clientId: 'YOUR_CLIENT_ID',
+      clientId: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID as string,
       // Optional client configuration:
       autoSelect: false,
       cancelOnTapOutside: true,

@@ -8,7 +8,7 @@
 
 ## React 19 + Next 16
 
-- [ ] Upgrade React & enable Next 16 features
+- [x] Upgrade React & enable Next 16 features
 - [ ] Test page & component view transitions
 - [ ] Experiment with `useTransition` & `SuspenseList`
 
@@ -95,7 +95,7 @@
   - Drizzle DB queries
   - Valibot validation schemas
   - Utility functions (auth helpers, password checks, token helpers)
-  
+
 - [ ] Write integration tests for:
   - oRPC queries & mutations
   - Forms (React Hook Form + Valibot)

@@ -24,7 +24,7 @@ import {
 } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { PasswordInput } from '@/components/ui/password-input'
-import { authClient } from '@/lib/auth.client'
+import { signIn, useSession } from '@/lib/auth.client'
 
 const formSchema = z.object({ email: z.email(), password: z.string().min(6) })
 
@@ -39,6 +39,11 @@ export default function LoginPreview() {
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     try {
+      const { email, password } = values
+      await signIn.email({
+        email,
+        password,
+      })
     } catch (error) {
       console.error('Form submission error', error)
       toast.error('Failed to submit the form. Please try again.')
@@ -107,6 +112,9 @@ export default function LoginPreview() {
               </Button>
               <Button variant="outline" className="w-full">
                 Login with Github
+              </Button>
+              <Button variant="outline" className="w-full">
+                Login with Google
               </Button>
             </div>
           </form>

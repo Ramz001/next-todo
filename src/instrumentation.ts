@@ -1,6 +1,5 @@
 import { Logger } from 'pino'
 import { Registry, collectDefaultMetrics } from 'prom-client'
-import { registerOTel } from '@vercel/otel'
 
 declare global {
   var logger: Logger | undefined
@@ -29,6 +28,6 @@ export async function register() {
       registry: prometheusRegistry,
     }
 
-    registerOTel({ serviceName: process.env.OTEL_SERVICE_NAME })
+    // registerOTel({ serviceName: process.env.OTEL_SERVICE_NAME })
   }
 }
